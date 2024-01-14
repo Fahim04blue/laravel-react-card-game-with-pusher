@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-Route::post('register', function (Request $request) {
-    return 'hello';
-});
+Route::post('register', [\App\Http\Controllers\UserController::class,'register'])->middleware('api');
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
